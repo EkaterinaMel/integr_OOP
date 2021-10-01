@@ -1,32 +1,26 @@
-# Prerequisites
-*.d
+#include <iostream>
+using namespace std;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+// метод левых прямоугольников
+// x^2 + 2x + 1
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+int main() {
+	setlocale(LC_ALL, "rus");
+	double a, b, h, f = 0;
+	int n = 100;
+	cout << "Введите начало и конец отрезка: \n";
+	cin >> a >> b;
+	if (!(cin)||(a>b)) {
+		cout << "Неверное значение!!!\n";
+	}
+	else {
+		h = (b - a) / n;
+		double x = a;
+		for (int i = 0; i < n; i++) {
+			f += (x*x + 2*x + 1);
+			x+=h;
+		}
+		f *= h;
+		cout << "f = " << f << endl;
+	}
+}
